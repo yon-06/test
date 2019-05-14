@@ -1,0 +1,13 @@
+<% if flash[:notice] %>
+  <h1><%= flash[:notice] %></h1>
+ <% end %>
+
+<h2>タイトル</h2>
+<p><%= @book.title %></p>
+
+<h2>感想</h2>
+<p><%= @book.body %></p>
+
+<%= link_to "編集", edit_book_path(@book.id), class: 'edit_#{id}' %>
+<%= link_to "削除", book_path(@book), class: 'destroy_#{id}', method: :delete, "data-confirm" => "本当に削除しますか？" %>
+<%= link_to "back", books_path, class: "back" %>

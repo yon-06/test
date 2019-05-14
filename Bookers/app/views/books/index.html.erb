@@ -1,0 +1,23 @@
+<h1>投稿一覧</h1>
+<%= link_to '投稿', new_book_path %>
+
+<table>
+	<thead>
+		<tr>
+		  <th scope="col">タイトル</th>
+		  <th scope="col">感想</th>
+		  <th></th>
+		  <th></th>
+		<tr>
+	</thead>
+	<tbody>
+		<% @books.each do |book| %>
+		<tr>
+			<th><%= book.title %></th>
+			<td><%= book.body %></td>
+			<td><%= link_to "詳細" , book, class: 'show_#{id}' %></td>
+            <td><%= link_to "削除" , book, class: 'destroy_#{id}', method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
+        </tr>
+        <% end %>
+	</tbody>
+</table>
