@@ -1,0 +1,11 @@
+
+<div class="new-book">
+<h2>New Book</h2>
+	<%= form_for(book) do |f| %>
+	<%= render 'layouts/error_messages', model: f.object %>
+
+	<%= f.text_field :title, class: "form-control book_title", placeholder: "title" %>
+	<%= f.text_area :body, class: "form-control book_body", placeholder: "option" %>
+	<%= f.submit "Create Book", class: "btn btn-primary btn-block" %>
+	<% end %>
+</div>

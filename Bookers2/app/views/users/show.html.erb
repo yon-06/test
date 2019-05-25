@@ -1,0 +1,42 @@
+
+<div class="container">
+	<div class="row">
+		<div class="col-lg-3">
+			<div class="show_render">
+			<h2>User Info</h2>
+			<%= attachment_image_tag @user, :profile_image, :fill, 70, 70, format: 'jpeg', fallback: "no-image.jpg", size: "70x70" %>
+			<table class="table">
+				<tbody>
+					<tr>
+						<th scope="row">Name</th>
+						<th><%= @user.name %></th>
+					</tr>
+					<tr>
+						<th scope="row">Introduction</th>
+						<th><%= @user.introduction %></th>
+					</tr>
+				</tbody>
+			</table>
+			<% if @user == current_user %>
+			<button type="button" class="btn btn-default btn-block">
+			<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span><%= link_to "Edit", edit_user_path(@user), class:"edit_user_#{@user.id}" %>
+		</button>
+			<% end %>
+			</div>
+			<%= render 'books/new', book: @book %>
+		</div>
+<h2>Books</h2>
+			<table class="col-lg-9">
+				<thead>
+					<th class="col-lg-1">title</th>
+					<th class="col-lg-2">option</th>
+				</thead>
+				<% @books.each do |book| %>
+				<tbody>
+					<td><%= link_to book.title, book_path(book.id), class:"book_#{book.id}" %></td>
+					<td><%= book.body %></td>
+				</tbody>
+				<% end %>
+			</table>
+</div>
+</div>

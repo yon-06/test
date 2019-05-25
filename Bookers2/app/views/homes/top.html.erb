@@ -1,0 +1,26 @@
+
+<header id="header" class="">
+	<%= render 'homes/toplist', homes: @homes %>
+</header><!-- /header -->
+<head>
+	<title>Bookers</title>
+</head>
+<body>
+
+<div class="top-text">
+	<h1>ようこそBookersへ！</h1>
+    <p>Bookersでは、さまざまな書籍に関する意見や<br>
+	<br>
+	印象を共有し交換することができます
+    </p>
+</div>
+
+<div class="regi">
+   <p>
+	<%= link_to 'Login', new_user_session_path, class: "btn btn-primary" %><br>
+	<%= link_to 'Sing up', new_user_registration_path, class: "btn btn-success" %><br>
+   </p>
+</div>
+
+</body>
+</html>
