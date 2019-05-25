@@ -7,8 +7,8 @@
 			<%= render 'layouts/error_messages', model: f.object %>
 
 			<label for="ProfileImage">Profile Image</label><br>
-			<%= attachment_image_tag current_user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no-image.jpg", size: "100x100" %>
-			<%= f.attachment_field :profile_image, autofocus: true, class: "form-control user_image", id: "AddProfile_image", fallback: "no-image.jpg", size: "70x70" %>
+			<%= attachment_image_tag current_user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg", size: "100x100" %>
+			<%= f.attachment_field :profile_image, autofocus: true, class: "form-control user_image", id: "AddProfile_image", fallback: "no_image.jpg", size: "70x70" %>
 
 			<label for="username">Name</label>
 			<%= f.text_field :name, autofocus: true, class: "form-control name", id: "inputName", placeholder: "Name" %>
